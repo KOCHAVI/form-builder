@@ -18,6 +18,6 @@ app.get('/health', (req, res) => {
 });
 
 app.listen(process.env.PORT || 3000, () => {
-    connectDB()
+    connectDB();
     console.log('Server is running on http://localhost:3000');
 });
