@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 
 import { connectDB } from './config/db';
-import loggerMiddleware from './middlewares/logger';
+import requestLogger from './middlewares/requestLogger';
 
 dotenv.config();
 
@@ -11,7 +11,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(loggerMiddleware);
+app.use(requestLogger);
 
 app.get('/health', (req, res) => {
     res.sendStatus(200);
